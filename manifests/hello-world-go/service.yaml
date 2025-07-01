@@ -1,0 +1,13 @@
+# manifests/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-world-go
+  namespace: hello-world
+spec:
+  selector:
+    app: hello-world-go
+  ports:
+    - port: 80
+      targetPort: 90
+  type: ClusterIP

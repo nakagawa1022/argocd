@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-world-go
+  namespace: hello-world
+  labels:
+    app: hello-world-go
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello-world-go
+  template:
+    metadata:
+      labels:
+        app: hello-world-go
+    spec:
+      containers:
+        - name: hello-world-go
+          image: ghcr.io/nakagawa1022/hello-world-go:latest
+          ports:
+            - containerPort: 90
